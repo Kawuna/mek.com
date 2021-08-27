@@ -11,23 +11,22 @@
    <body>
       <div class="wrapper">
          <h1>mqtt-demo</h1>
+         <input type="button" onclick="startConnect()" value="เชื่อมต่อ">
+         <input type="button" onclick="startDisconnect()" value="ตัดการเชื่อมต่อ">
          <form id="connection-information-form">
-            <b>Hostname or IP Address:</b> 
-            <input id="host" type="text" name="host" value="34.67.161.xxx"><br>
-            <b>Port:</b>
-            <input id="port" type="text" name="port" value="9001"><br>
-			<b>Username:</b>
-            <input id="usr" type="text" name="usr" value="xxx"><br>
-			<b>Password:</b>
-            <input id="pwd" type="password" name="pwd" value="xxx"><br>
-            <b>Topic:</b>
-            <input id="topic" type="text" name="topic" value="MQTTBox"><br><br>
-            <input type="button" onclick="startConnect()" value="Connect">
-            <input type="button" onclick="startDisconnect()" value="Disconnect"><br><br>
-			<b>Publish Topic:</b> 
-            <input id="pubTopic" type="text" name="pubTopic" value="pubWeb"><br>
+            <select name="pond" id="pond">
+                  <option value="P1">บ่อ1</option>
+                  <option value="P2">บ่อ2</option>
+            </select>
+         <!-- --------------------------------------------- -->
+            <select name="kg_and_time" id="kg_and_time">
+               <option value="kg">น้ำหนักของอาหาร</option>
+               <option value="times">จำนวนครั้งต่อวัน</option>
+            </select>
+          <!-- -------------------------------------------- -->
+            <br>		
             <b>Publish Message:</b>
-            <input id="pubMsg" type="text" name="pubMsg" value="Hello from Web"><br>
+            <input id="pubMsg" type="text" name="pubMsg"><br>
 			<input type="button" onclick="publish()" value="Publish">
          </form>
          <div id="messages"></div>
